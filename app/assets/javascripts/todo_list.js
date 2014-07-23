@@ -34,4 +34,25 @@ this.todoCountElem.html("<p>" + this.count + " ToDos</p>");
     this.todosListElem.append(todoHTML);
     this.count = this.count + 1;
   },
+  createToDo: function(event){
+    var $form = $(event.target),
+      $content = $form.find("input[name='content']"),
+      $complete = $form.find("input[name='complete']"),
+      requestObj = {todo: {content: $content.val(), complete: $complete.val()}};
+
+      $content.val("");
+      $body.val("");
+
+    event.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: 'http://localhost:3000/todos',
+      data: requestObj,
+      dataType: 'json'
+    })
+    .done(this.addToDoToList.bind(this))
+    .done(function(){
+      this.todoCountElem.html("<p>" + this.count + " ToDos</p>");
+    }.bind(this));
+  },
 };
