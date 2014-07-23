@@ -55,4 +55,22 @@ this.todoCountElem.html("<p>" + this.count + " ToDos</p>");
       this.todoCountElem.html("<p>" + this.count + " ToDos</p>");
     }.bind(this));
   },
+  init: function(getToDosID, todosListID, todoCountID){
+    this.getToDosButton = $(getToDosID);
+    this.todosListElem = $(todosListID);
+
+    this.todoCountElem = $(todoCountID);
+
+    this.count = 0;
+
+    $('#new-todo').on('submit', this.createToDo.bind(this));
+
+    this.getToDosButton.on('click', this.getToDos.bind(this));
+
+    this.getToDosButton.trigger('click');
+
+
+
+
+  }
 };
