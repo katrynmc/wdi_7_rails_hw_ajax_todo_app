@@ -70,7 +70,5 @@ this.todoCountElem.html("<p>" + this.count + " ToDos</p>");
     this.getToDosButton.trigger('click');
 
 
-
-
   }
 };
