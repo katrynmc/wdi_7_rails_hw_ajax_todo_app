@@ -16,8 +16,7 @@ if (this.complete === false) {
     var todoHTML = '<h2 id=todo_' + this.id + '>' + this.content + '</h2>';
     return todoHTML;
 } else {
-    var todoHTMLcomplete = '<h2 id=todo_' + this.id + '>' + this.content;
-    todoHTMLcomplete += '<div>' + this.complete + '</div>';
+    var todoHTMLcomplete = '<h2 id=todo_' + this.id + '>' + this.content + '<div class="pull-right"><span class="glyphicon glyphicon-ok"></span></div>';
     todoHTMLcomplete += '</h2>';
     return todoHTMLcomplete;
 }
