@@ -27,5 +27,11 @@ Collection.ToDoList = {
     .done(function(){
 this.todoCountElem.html("<p>" + this.count + " ToDos</p>");
     }.bind(this));
-  }
+  },
+  addToDoToList: function(article){
+    var newToDo = new Collection.ToDo(todo.id, todo.content, todo.complete),
+    todoHTML = newToDo.showView();
+    this.todosListElem.append(todoHTML);
+    this.count = this.count + 1;
+  },
 };
