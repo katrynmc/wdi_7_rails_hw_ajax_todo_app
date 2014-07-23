@@ -21,3 +21,7 @@ gem 'active_model_serializers'
 
 # Add Handlebars template support
 gem 'handlebars_assets'
+
+gem 'bootstrap-sass', '~> 3.2.0.0'
+
+gem 'autoprefixer-rails'

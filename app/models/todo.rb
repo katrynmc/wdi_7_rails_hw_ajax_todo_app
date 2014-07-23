@@ -1,2 +1,2 @@
-class ToDo < ActiveRecord::Base
+class Todo < ActiveRecord::Base
 end

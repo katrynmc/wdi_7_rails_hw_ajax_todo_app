@@ -1,4 +1,4 @@
-class ToDosController < ApplicationController
+class TodosController < ApplicationController
 
   def default_serializer_options
     {root: false}
@@ -7,17 +7,17 @@ class ToDosController < ApplicationController
   respond_to :json
 
   def index
-    @todos = ToDo.all
+    @todos = Todo.all
     respond_with(@todos)
   end
 
   def show
-    @todo = ToDo.find(params[:id])
+    @todo = Todo.find(params[:id])
     respond_with(@todo)
   end
 
   def create
-    @todo = ToDo.new(todo_params)
+    @todo = Todo.new(todo_params)
 
     if @todo.save
       respond_with(@todo)
