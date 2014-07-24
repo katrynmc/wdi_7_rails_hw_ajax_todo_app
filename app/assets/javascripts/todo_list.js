@@ -34,6 +34,11 @@ Collection.TodoList = {
     this.todosListElem.append(todoHTML);
     this.count = this.count + 1;
   },
+  removeTodoFromList: function(todo){
+
+    this.todosListElem.remove(todoHTML);
+    this.count = this.count - 1;
+  },
   createTodo: function(event){
     var $form = $(event.currentTarget),
       $content = $form.find("input[name='content']"),
